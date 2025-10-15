@@ -70,12 +70,11 @@ export default function Home() {
       <DataTable
         columns={userColumn(navigateWithData, handleEdit, handleDelete)}
         data={dataUser}
-        addProject
         onAddProject={() => {
           setDataDetail({});
           setIsOpenModal(true)
         }}
-        title="Users Data"
+        title="Users"
         addButtonText="User"
       />
       <AddUser

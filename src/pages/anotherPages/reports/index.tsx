@@ -161,7 +161,7 @@ const ReportsPage = () => {
           <DataTable
             columns={detailColumn(handleDelete)}
             data={filteredWorklogs}
-            title={`Detail Laporan untuk ${selectedUser.name}`}
+            title={`Detail Reports ${selectedUser.name}`}
           />
         </>
       )}

@@ -93,24 +93,26 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="flex flex-col gap-3">
-      <h1 className="text-2xl font-bold">{title}</h1>
-      <div className="flex items-center justify-between">
-        <Button
-          variant="success"
-          className="rounded-md hidden md:inline-flex gap-1"
-          onClick={onAddProject}
-        >
-          <Plus />
-          {addButtonText}
-        </Button>
-        <div className="flex w-full justify-between md:w-auto md:ml-0 md:justify-end gap-3 items-center">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <div className="flex gap-3 justify-end">
           <Input
             placeholder="Search..."
-            className="w-[15rem]"
+            className="w-auto flex-grow sm:w-[15rem]"
             value={search}
             onChange={(e: any) => setSearch(e.target.value)}
             iconBefore={<IoIosSearch size={20} className="text-gray-500" />}
           />
+          {onAddProject && (
+            <Button
+              variant="primary"
+              className="rounded-md hidden md:inline-flex gap-1"
+              onClick={onAddProject}
+            >
+              <Plus />
+              {addButtonText}
+            </Button>
+          )}
           {addProject && (
             <Button
               variant="primary"
@@ -128,16 +130,18 @@ export function DataTable<TData, TValue>({
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem>
-                <Button
-                  variant="success"
-                  className="rounded-md w-full"
-                  onClick={onAddProject}
-                >
-                  <Plus />
-                  {addButtonText}
-                </Button>
-              </DropdownMenuItem>
+              {onAddProject && (
+                <DropdownMenuItem>
+                  <Button
+                    variant="primary"
+                    className="rounded-md w-full"
+                    onClick={onAddProject}
+                  >
+                    <Plus />
+                    {addButtonText}
+                  </Button>
+                </DropdownMenuItem>
+              )}
               <DropdownMenuSeparator />
               {addProject && (
                 <DropdownMenuItem>

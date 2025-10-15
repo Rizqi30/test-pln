@@ -259,9 +259,9 @@ const Detail = () => {
       <DataTable
         columns={detailColumn(handleDelete)}
         data={filteredWorklogs}
-        title={`Worklog untuk ${dataUser?.name}`}
+        title={`Worklog ${dataUser?.name}`}
         onAddProject={() => setIsOpenModal(true)}
-        addButtonText="+ Tambah Worklog"
+        addButtonText="Tambah Worklog"
       />
       <AddWorklog
         isOpen={isOpenModal}
