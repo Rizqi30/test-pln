@@ -261,7 +261,7 @@ const Detail = () => {
         data={filteredWorklogs}
         title={`Worklog ${dataUser?.name}`}
         onAddProject={() => setIsOpenModal(true)}
-        addButtonText="Tambah Worklog"
+        addButtonText="Add"
       />
       <AddWorklog
         isOpen={isOpenModal}

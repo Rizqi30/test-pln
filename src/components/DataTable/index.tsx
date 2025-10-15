@@ -53,7 +53,7 @@ export function DataTable<TData, TValue>({
   data,
   addProject,
   onAddProject,
-  addButtonText = "Tambah",
+  addButtonText = "Add",
 }: DataTableProps<TData, TValue>) {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -120,7 +120,7 @@ export function DataTable<TData, TValue>({
               onClick={() => nav.push("/project")}
             >
               <Plus />
-              Project
+              Add
             </Button>
           )}
           <DropdownMenu>
@@ -151,7 +151,7 @@ export function DataTable<TData, TValue>({
                     onClick={() => nav.push("/project")}
                   >
                     <Plus />
-                    Project
+                    Add
                   </Button>
                 </DropdownMenuItem>
               )}

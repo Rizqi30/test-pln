@@ -39,17 +39,17 @@ export const detailColumn = (handleDelete: any): ColumnDef<any>[] => [
   },
   {
     accessorKey: "projects.name",
-    header: "Nama Project",
+    header: "Projects Name",
     size: 100,
   },
   {
     accessorKey: "hours_worked",
-    header: "Jam Kerja",
+    header: "Hours Worked",
     size: 100,
   },
   {
     accessorKey: "daily_total",
-    header: "Total Harian",
+    header: "Daily Total",
     size: 100,
     cell: ({ row }) => {
       const value = row.getValue("hours_worked");
@@ -66,7 +66,7 @@ export const detailColumn = (handleDelete: any): ColumnDef<any>[] => [
   },
   {
     accessorKey: "mnthly_Total",
-    header: "Total Bulanan",
+    header: "Monthly Total",
     size: 100,
     cell: ({ row }) => {
       const value = row.getValue("hours_worked");
