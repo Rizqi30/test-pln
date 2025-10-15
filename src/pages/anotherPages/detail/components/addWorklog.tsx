@@ -63,7 +63,7 @@ const AddWorklog = ({ isOpen, onClose, idUser, postWorklogData, dataProjectOrigi
   })) || [];
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose} modal={false}>
+    <Dialog open={isOpen} onOpenChange={(open) => {if (!open) onClose();}} modal={true}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Add Worklog</DialogTitle>

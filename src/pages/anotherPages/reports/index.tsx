@@ -9,7 +9,7 @@ import { ClipLoader } from 'react-spinners';
 import useAlertDialog from '@/components/Alert/store';
 import { Combobox } from '@/components/ui/combobox';
 import { DatePicker } from '@/components/ui/datepicker';
-import { detailColumn } from '@/components/Column/column';
+import { detailColumnReport } from '@/components/Column/column';
 import useHome from '@/hooks/dummy/useHome';
 import moment from 'moment';
 
@@ -159,7 +159,7 @@ const ReportsPage = () => {
           
           {/* Table Section */}
           <DataTable
-            columns={detailColumn(handleDelete)}
+            columns={detailColumnReport}
             data={filteredWorklogs}
             title={`Detail Reports ${selectedUser.name}`}
           />
