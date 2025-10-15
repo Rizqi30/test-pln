@@ -25,6 +25,8 @@ export default function Navbar() {
         return 'Projects';
       case '/anotherPages/detail':
         return 'Detail';
+      case '/anotherPages/reports':
+        return 'Reports';
       default:
         return '';
     }

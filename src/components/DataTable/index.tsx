@@ -53,7 +53,7 @@ export function DataTable<TData, TValue>({
   data,
   addProject,
   onAddProject,
-  addButtonText = "+ Tambah",
+  addButtonText = "Tambah",
 }: DataTableProps<TData, TValue>) {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -100,9 +100,10 @@ export function DataTable<TData, TValue>({
           className="rounded-md hidden md:inline-flex gap-1"
           onClick={onAddProject}
         >
+          <Plus />
           {addButtonText}
         </Button>
-        <div className="flex gap-3 items-center">
+        <div className="flex w-full justify-between md:w-auto md:ml-0 md:justify-end gap-3 items-center">
           <Input
             placeholder="Search..."
             className="w-[15rem]"
@@ -133,6 +134,7 @@ export function DataTable<TData, TValue>({
                   className="rounded-md w-full"
                   onClick={onAddProject}
                 >
+                  <Plus />
                   {addButtonText}
                 </Button>
               </DropdownMenuItem>

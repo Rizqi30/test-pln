@@ -76,7 +76,7 @@ export default function Home() {
           setIsOpenModal(true)
         }}
         title="Users Data"
-        addButtonText="+ User"
+        addButtonText="User"
       />
       <AddUser
         isOpen={isOpenModal}
