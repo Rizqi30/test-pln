@@ -10,8 +10,8 @@ const IV = process.env.NEXT_PUBLIC_SECRET_IV || "";
 export function encryptData(data: any): string {
   const cipher = crypto.createCipheriv(
     "aes-256-cbc",
-    Buffer.from(SECRET_KEY),
-    Buffer.from(IV)
+    Buffer.from(SECRET_KEY, "hex"),
+    Buffer.from(IV, "utf8")
   );
   let encrypted = cipher.update(JSON.stringify(data), "utf8", "base64");
   encrypted += cipher.final("base64");
@@ -24,8 +24,8 @@ export function encryptData(data: any): string {
 export function decryptData(encryptedData: string): any {
   const decipher = crypto.createDecipheriv(
     "aes-256-cbc",
-    Buffer.from(SECRET_KEY),
-    Buffer.from(IV)
+    Buffer.from(SECRET_KEY, "hex"),
+    Buffer.from(IV, "utf8")
   );
   let decrypted = decipher.update(encryptedData, "base64", "utf8");
   decrypted += decipher.final("utf8");
